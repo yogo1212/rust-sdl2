@@ -795,7 +795,7 @@ impl VideoSubsystem {
 
     pub fn gl_set_swap_interval<S: Into<SwapInterval>>(&self, interval: S) -> Result<(), String> {
         let result = unsafe { sys::SDL_GL_SetSwapInterval(interval.into() as c_int) };
-        if result == 0{
+        if result == 0 {
             Ok(())
         } else {
             Err(get_error())
